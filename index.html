@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>The Party Detective</title>
+    <link rel="stylesheet" href="task2/styles.css" />
+    <style>
+      .site-title {
+        max-width: 1440px;
+        margin: 14px auto 12px;
+        padding: 16px 22px;
+        background: #17324d;
+        color: white;
+        border-radius: 12px;
+        text-align: center;
+      }
+      .site-title h1 {
+        margin: 0;
+        font-size: 32px;
+      }
+      .task-switcher {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 auto 16px;
+      }
+      .task-switcher button {
+        font:
+          700 15px Segoe UI,
+          Arial,
+          sans-serif;
+        border: 0;
+        border-radius: 9px;
+        padding: 11px 18px;
+        background: #d9e5ed;
+        color: #17324d;
+        cursor: pointer;
+      }
+      .task-switcher button.active {
+        background: #2176ae;
+        color: white;
+      }
+      @media (max-width: 800px) {
+        .site-title {
+          margin: 8px 10px;
+        }
+        .site-title h1 {
+          font-size: 25px;
+        }
+        .task-switcher {
+          gap: 6px;
+        }
+        .task-switcher button {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+      }
+    </style>
+    <script>
+      window.APP_MODE =
+        new URLSearchParams(location.search).get("task") === "task2"
+          ? "task2"
+          : "task1";
+      window.AVATAR_BASE = "assets/avatars/";
+    </script>
+    <script src="assets/jquery-3.7.1.min.js"></script>
+    <script src="task1/data.js"></script>
+    <script defer src="task2/app.js"></script>
+  </head>
+  <body>
+    <header class="site-title"><h1>The Party Detective</h1></header>
+    <nav class="task-switcher" aria-label="Tasks">
+      <button type="button" data-task="task1">Task 1 · jQuery cases</button>
+      <button type="button" data-task="task2">
+        Task 2 · animations and interactions
+      </button>
+    </nav>
+    <main>
+      <section class="controls">
+        <h2>Cases</h2>
+        <p>Select a case to search the rendered page with jQuery.</p>
+        <div id="case-buttons" class="case-buttons"></div>
+        <div id="result" class="result" aria-live="polite">
+          Choose a case to begin.
+        </div>
+      </section>
+      <section id="motion-tools" class="motion-tools" hidden>
+        <h2>Task 2 controls</h2>
+        <p>
+          Click a guest card for details. Sort a room, move guests, or spotlight
+          a case.
+        </p>
+      </section>
+      <section id="house" aria-label="Party house"></section>
+      <footer class="legend">
+        <span
+          ><i class="dot red"></i><i class="dot blue"></i
+          ><i class="dot green"></i><i class="dot black"></i
+          ><i class="dot yellow"></i><i class="dot purple"></i> Clothing</span
+        ><span>📱 phone</span><span>👓 glasses</span><span>👜 bag</span
+        ><span>☕ cup</span><span>🍰 crumbs</span><span>🎓 AITU student</span>
+      </footer>
+    </main>
+    <div id="guest-modal" class="modal" hidden>
+      <div class="modal-card">
+        <button class="close" aria-label="Close">×</button>
+        <div class="modal-content"></div>
+      </div>
+    </div>
+    <script>
+      const activeTask = window.APP_MODE;
+      document
+        .querySelector(`[data-task="${activeTask}"]`)
+        .classList.add("active");
+      document.querySelectorAll(".task-switcher button").forEach((button) =>
+        button.addEventListener("click", () => {
+          const next = button.dataset.task;
+          if (next !== activeTask) location.search = "?task=" + next;
+        }),
+      );
+    </script>
+  </body>
+</html>

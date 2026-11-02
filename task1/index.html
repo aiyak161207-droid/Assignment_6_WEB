@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>The Party Detective</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="controls">
+        <h2>Cases</h2>
+        <p>Select a case to search the rendered page with jQuery.</p>
+        <div id="case-buttons" class="case-buttons"></div>
+        <div id="result" class="result" aria-live="polite">
+          Choose a case to begin.
+        </div>
+      </section>
+      <section id="motion-tools" class="motion-tools" hidden>
+        <h2>Task 2 controls</h2>
+        <p>
+          Click a guest card for details. Sort a room, move guests, or spotlight
+          a case.
+        </p>
+      </section>
+      <section id="house" aria-label="Party house"></section>
+      <footer class="legend">
+        <span
+          ><i class="dot red"></i><i class="dot blue"></i
+          ><i class="dot green"></i><i class="dot black"></i
+          ><i class="dot yellow"></i><i class="dot purple"></i> Clothing</span
+        ><span>📱 phone</span><span>👓 glasses</span><span>👜 bag</span
+        ><span>☕ cup</span><span>🍰 crumbs</span><span>🎓 AITU student</span>
+      </footer>
+    </main>
+    <div id="guest-modal" class="modal" hidden>
+      <div class="modal-card">
+        <button class="close" aria-label="Close">×</button>
+        <div class="modal-content"></div>
+      </div>
+    </div>
+    <script>
+      window.APP_MODE = "task1";
+    </script>
+  </body>
+</html>

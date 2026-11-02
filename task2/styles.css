@@ -1,0 +1,401 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f3f5f7;
+  color: #17212b;
+  font:
+    15px/1.45 Segoe UI,
+    Arial,
+    sans-serif;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px max(24px, calc((100vw - 1320px) / 2));
+  background: #17324d;
+  color: #fff;
+}
+.top h1 {
+  font-size: 32px;
+  margin: 2px 0;
+}
+.top p {
+  margin: 4px 0;
+  color: #d3dfeb;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.header-tools {
+  display: flex;
+  gap: 8px;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 13px;
+  background: #2176ae;
+  color: white;
+}
+button:hover {
+  background: #145d8d;
+}
+#reset,
+#clear {
+  background: #e8f0f5;
+  color: #17324d;
+}
+main {
+  max-width: 1320px;
+  margin: 22px auto;
+  padding: 0 20px;
+}
+.controls,
+.motion-tools {
+  background: white;
+  border: 1px solid #dce3e8;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.controls h2,
+.motion-tools h2 {
+  margin: 0 0 3px;
+  font-size: 19px;
+}
+.controls p,
+.motion-tools p {
+  margin: 4px 0 12px;
+  color: #5b6975;
+}
+.case-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+.case-buttons button {
+  font-size: 12px;
+  text-align: left;
+  min-height: 42px;
+  background: #edf4f8;
+  color: #17324d;
+  border: 1px solid #d5e3ed;
+}
+.case-buttons button:hover,
+.case-buttons button.active {
+  background: #2176ae;
+  color: white;
+}
+.result {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f4f8fb;
+  border-radius: 8px;
+  min-height: 40px;
+}
+.floor {
+  border: 1px solid #d7dfe4;
+  background: white;
+  margin: 12px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.floor-title {
+  padding: 8px 14px;
+  background: #e8eef2;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+.room {
+  border: 1px solid #d8e0e5;
+  border-radius: 10px;
+  min-height: 150px;
+  overflow: hidden;
+}
+.room-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f8f9;
+  padding: 9px 11px;
+  border-bottom: 1px solid #e3e8eb;
+}
+.room-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.sort-room {
+  font-size: 11px;
+  padding: 6px 9px;
+}
+.guest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  min-height: 105px;
+}
+.guest {
+  width: 116px;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e7eb;
+  border-radius: 9px;
+  padding: 8px 6px 7px;
+  cursor: pointer;
+}
+.guest:hover {
+  border-color: #63a6cf;
+}
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 4px solid var(--ring);
+  margin: auto;
+  overflow: hidden;
+  background: #eaf0f5;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.guest strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+}
+.guest .time {
+  font-size: 11px;
+  color: #596975;
+}
+.items {
+  min-height: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.badge {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 12px;
+}
+.guest.highlight {
+  box-shadow: 0 0 0 3px #f2c14e;
+  background: #fffceb;
+}
+.guest.pale {
+  opacity: 0.2;
+}
+.room.found-room {
+  outline: 3px solid #f2c14e;
+}
+.spotlight {
+  opacity: 1;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 12px 0 30px;
+  font-size: 13px;
+}
+.dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.red {
+  background: #d94b5a;
+}
+.blue {
+  background: #3778cf;
+}
+.green {
+  background: #27956a;
+}
+.black {
+  background: #26333d;
+}
+.yellow {
+  background: #e7ad25;
+}
+.purple {
+  background: #8957b7;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #15253677;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+}
+.modal-card {
+  position: relative;
+  width: min(440px, 92vw);
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 16px 55px #0004;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: #eaf0f4;
+  color: #233;
+}
+.modal-content {
+  text-align: center;
+}
+.modal-content .avatar {
+  width: 90px;
+  height: 90px;
+}
+.move-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.move-buttons button {
+  font-size: 12px;
+}
+.flying {
+  z-index: 30 !important;
+  pointer-events: none;
+}
+.empty-slot {
+  width: 116px;
+  height: 130px;
+  border: 1px dashed #b8c4cc;
+  border-radius: 9px;
+}
+.room.sorting .guest {
+  transition: none;
+}
+@media (max-width: 850px) {
+  .case-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rooms {
+    grid-template-columns: 1fr;
+  }
+  .top {
+    align-items: flex-start;
+    gap: 14px;
+    flex-direction: column;
+  }
+  .guest {
+    width: 105px;
+  }
+}
+.flying {
+  z-index: 30 !important;
+  pointer-events: none;
+}
+.empty-slot {
+  width: 116px;
+  height: 130px;
+  border: 1px dashed #b8c4cc;
+  border-radius: 9px;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #15253677;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+}
+.modal-card {
+  position: relative;
+  width: min(440px, 92vw);
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 16px 55px #0004;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: #eaf0f4;
+  color: #233;
+}
+.modal-content {
+  text-align: center;
+}
+.modal-content .avatar {
+  width: 90px;
+  height: 90px;
+}
+.move-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.move-buttons button {
+  font-size: 12px;
+}
+.modal[hidden] {
+  display: none !important;
+}
+
+.modal {
+  pointer-events: none;
+}
+.modal-card {
+  pointer-events: auto;
+}
+.guest strong {
+  font-size: 11px;
+  line-height: 1.2;
+  min-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guest .case-name {
+  display: block;
+  font-size: 9px;
+  line-height: 1.1;
+  color: #71808b;
+  margin-top: 1px;
+  min-height: 10px;
+}
+
+.image-credit {
+  font-size: 12px;
+  color: #60717e;
+  margin: 0 4px 24px;
+}
+.image-credit a {
+  color: #17699c;
+}
