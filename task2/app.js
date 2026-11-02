@@ -341,8 +341,9 @@ $(function () {
       .stop(true, false)
       .fadeTo(300, 1)
       .removeClass("highlight");
+    $("#case-buttons button").removeClass("active");
     $("#house .room").removeClass("found-room");
-    $("#result").text("Highlights cleared.");
+    $("#result").text("Choose a case to begin.");
   });
   if (is2) {
     let current = null,

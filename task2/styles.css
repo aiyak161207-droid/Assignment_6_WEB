@@ -47,10 +47,22 @@ button {
 button:hover {
   background: #145d8d;
 }
-#reset,
-#clear {
+#reset {
   background: #e8f0f5;
   color: #17324d;
+}
+#clear {
+  display: block;
+  margin: 16px 0 4px;
+  padding: 10px 20px;
+  background: #f2b84b;
+  color: #17324d;
+  border: 1px solid #d99518;
+  font-weight: 700;
+  box-shadow: 0 2px 0 #d99518;
+}
+#clear:hover {
+  background: #e9a92f;
 }
 main {
   max-width: 1320px;
